@@ -1,6 +1,11 @@
 const express = require('express')
 const app = express()
 
+const jwt =require('jsonwebtoken')
+
+app.use(express.json)
+
+
 const posts = [
     {
         username: 'Chris',
@@ -14,6 +19,10 @@ const posts = [
 
 app.get('/posts', (req, res) => {
     res.json(posts)
+})
+
+app.post('login', (req, res)  => {
+    // Authenticate User
 })
 
 app.listen(3000)
